@@ -5,10 +5,9 @@
 if [ -d build ] 
 then
 	rm -r build
-else
-	mkdir build
-	cd    build 
 fi
+mkdir build
+cd    build 
 
 # OpenGL is not supported for Linux (OpenCV)
 
@@ -48,7 +47,7 @@ cmake --enable-shared \
       -D CMAKE_SKIP_RPATH=ON            \
       -D CMAKE_CUDA_COMPILER=/usr/local/cuda-9.0/bin/nvcc \
       -D BUILD_WITH_DEBUG_INFO=OFF      \
-      -D OPENCV_EXTRA_MODULES_PATH=/notebooks/OpenCV330/opencv_contrib-3.3.0/modules \
+      -D OPENCV_EXTRA_MODULES_PATH=/pathto/opencv_contrib-3.3.0/modules \
       -Wno-dev  ..                     &&
 make
 
@@ -59,7 +58,7 @@ case $(uname -m) in
        *) ARCH=ia32    ;;
 esac                     &&
 
-cp -v /notebooks/OpenCV330/opencv/build/3rdparty/ippicv/ippicv_lnx/lib/$ARCH/libippicv.a /usr/lib &&
+cp -v /pathto/opencv/build/3rdparty/ippicv/ippicv_lnx/lib/$ARCH/libippicv.a /usr/lib &&
 unset ARCH
 
 ipython -c "import cv2; print(cv2.__version__); print(cv2.getBuildInformation())"
