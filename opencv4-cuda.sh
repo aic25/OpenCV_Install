@@ -98,7 +98,7 @@ cmake -D CMAKE_BUILD_TYPE=RELEASE \
         -D CUDA_ARCH_PTX="" \
         -D BUILD_DOCS=ON \
         -D BUILD_TESTS=ON \
-        -D OPENCV_EXTRA_MODULES_PATH=/notebooks/OpenCV4/opencv_contrib/modules ..
+        -D OPENCV_EXTRA_MODULES_PATH=/pathto/opencv_contrib/modules ..
         
 make -j10
 make install
