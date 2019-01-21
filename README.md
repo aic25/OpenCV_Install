@@ -1,3 +1,3 @@
-# OpenCV 3.3.0 Installation scripts
+# OpenCV 3.4.0 Installation scripts
 
 Names says it all.
